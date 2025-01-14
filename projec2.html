@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+    <link rel="stylesheet" href="project2.css">
+    <body>
+        <div class="container" id="container">
+            <div class="form-container" id="login-form">
+                <h1>Login</h1>
+                <form>
+                    <input type="email" id="login-email" placeholder="Email" required>
+
+                    <input type="password" id="login-password" placeholder="Password" required>
+                
+                    <button type="submit">Login</button>
+                </form>
+                <div class="toggle">
+                    Don't have an account? <a onclick="showRegistration()">Register</a>
+                </div>
+            </div>
+    
+            <div class="form-container" id="registration-form" style="display: none;">
+                <h1>Register</h1>
+                <form>
+                    <input type="text" id="register-name" placeholder="Full Name" required>
+                    <input type="email" id="register-email" placeholder="Email" required>
+                    <input type="password" id="register-password" placeholder="Password" required>
+                    <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                    <button type="submit">Register</button>
+                </form>
+                <div class="toggle">
+                    Already have an account? <a onclick="showLogin()">Login</a>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            const loginForm = document.getElementById('login-form');
+            const registrationForm = document.getElementById('registration-form');
+            const container = document.getElementById('container');
+    
+            function showRegistration() {
+                loginForm.style.display = 'none';
+                registrationForm.style.display = 'block';
+                container.style.background = "url('registration-bg.jpg') no-repeat center center/cover";
+            }
+    
+            function showLogin() {
+                registrationForm.style.display = 'none';
+                loginForm.style.display = 'block';
+                container.style.background = "url('login-bg.jpg') no-repeat center center/cover";
+            }
+        </script>
+    </body>
+    </html>
+    
